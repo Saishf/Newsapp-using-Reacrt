@@ -13,7 +13,7 @@ import React, { Component } from 'react'
 
 
 export default class App extends Component {
-  pagesize=4;
+  pagesize=8;
   render() {
     return (
       
@@ -23,7 +23,7 @@ export default class App extends Component {
         <Navbar/>
         
         <Routes>
-          <Route exact path="/" element={<News key="general" pageSize={this.pagesize} country="in" category="general" />} />
+          <Route exact path="/" element={<News key="general" pageSize={this.pagesize} country="in" category="General" />} />
           <Route exact path="/business" element={<News key="business" pageSize={this.pagesize} country="in" category="Business" />} />
           <Route exact path="/entertainment" element={<News key="entertainment" pageSize={this.pagesize} country="in" category="Entertainment" />} />
           <Route exact path="/general" element={<News key="general" pageSize={this.pagesize} country="in" category="General" />} />

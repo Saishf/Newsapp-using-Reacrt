@@ -15,13 +15,14 @@ export class News extends Component {
     category: propsTypes.string,
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,
       page: 1,
     };
+    document.title = `${this.props.category} - NewsApp`
   }
 
   async updatepage(){
@@ -87,7 +88,7 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-2">
-        <h1 className="text-center" style={{margin: '30px 0'}} >NewsApp - Top Headlines</h1>
+        <h1 className="text-center" style={{margin: '30px 0'}} >NewsApp - Top {this.props.category} Headlines</h1>
         {this.state.loading && <Spinner/>}
         <div className="row">
           {!this.state.loading && this.state.articles &&
